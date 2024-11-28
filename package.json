@@ -1,0 +1,101 @@
+{
+  "name": "recordly",
+  "displayName": "recordly",
+  "description": "Generates documentation for React apps",
+  "version": "0.0.1",
+  "publisher": "Dishant-Sharma",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.generateDocs",
+        "title": "Generate Documentation"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "compile": "webpack",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "^7.20.6",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.95.0",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.13.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.3",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.26.2",
+    "@babel/traverse": "^7.25.9",
+    "@huggingface/inference": "^2.8.1",
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "axios": "^1.7.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dishantsharma1123/recordly.git"
+  },
+  "keywords": [
+    "VS",
+    "Code",
+    "extension",
+    "AI-powered",
+    "React",
+    "documentation",
+    "generator",
+    "React",
+    "documentation",
+    "code",
+    "documentation",
+    "automated",
+    "documentation",
+    "developer",
+    "tools",
+    "React",
+    "app",
+    "React",
+    "development",
+    "documentation",
+    "tools",
+    "AI",
+    "documentation",
+    "React",
+    "code",
+    "generator",
+    "VS",
+    "Code",
+    "tools",
+    "developer",
+    "productivity"
+  ],
+  "author": "Dishant Sharma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dishantsharma1123/recordly/issues"
+  },
+  "homepage": "https://github.com/dishantsharma1123/recordly#readme"
+}
