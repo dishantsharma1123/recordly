@@ -2,6 +2,10 @@ import * as vscode from "vscode";
 import * as babelParser from "@babel/parser";
 import traverse from "@babel/traverse";
 import axios from "axios";
+import * as dotenv from "dotenv";
+import * as path from "path";
+
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 async function analyzeCode(code: string): Promise<string[]> {
   const ast = babelParser.parse(code, {
@@ -23,20 +27,20 @@ async function analyzeCode(code: string): Promise<string[]> {
 }
 
 async function generateDocumentation(components: string[]): Promise<string> {
-  const apiUrl = process.env.REACT_APP_API_URL;
-  const apiSecret = process.env.REACT_APP_HUGGING_FACE_API_KEY;
+  const apiUrl = process.env.API_URL!;
+  const huggingFaceToken = process.env.HUGGINGFACE_TOKEN!;
 
   const responses = await Promise.all(
     components.map(async (component) => {
       try {
         const response = await axios.post(
-          `${apiUrl}`,
+          apiUrl,
           {
             inputs: `Generate documentation for ${component}`,
           },
           {
             headers: {
-              Authorization: `Bearer ${apiSecret}`,
+              Authorization: `Bearer ${huggingFaceToken}`,
             },
           }
         );
